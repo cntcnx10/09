@@ -72,11 +72,51 @@
             padding: 2px 8px;
             white-space: nowrap;
         }
+
+        /* PLANET BACK BUTTON (Moved to Bottom Right) */
+        .planet-back-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(10, 25, 47, 0.9);
+            backdrop-filter: blur(10px);
+            border: 2px solid #FBBF24;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #FBBF24;
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 600;
+            font-size: 14px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        .planet-back-btn:hover {
+            background: #FBBF24;
+            color: #0A192F;
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 15px 30px rgba(251, 191, 36, 0.4);
+        }
+        .planet-icon {
+            font-size: 20px;
+            animation: float-planet 4s ease-in-out infinite;
+        }
+        @keyframes float-planet {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(-10deg); }
+        }
     </style>
 </head>
 <body class="bg-cargo text-navy font-sans antialiased selection:bg-safety selection:text-navy">
 
-    <!-- Navigation -->
+    <a href="index.html" class="planet-back-btn">
+        <span class="planet-icon">🪐</span> BACK TO NEXUS
+    </a>
+
     <nav class="fixed w-full z-50 bg-navy/95 backdrop-blur-sm border-b-2 border-safety text-white">
         <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
             <div class="font-mono font-bold text-xl flex items-center gap-2">
@@ -92,7 +132,6 @@
         </div>
     </nav>
 
-    <!-- 1. Hero Section -->
     <section id="hero" class="relative min-h-screen bg-navy text-white bg-grid-dark flex items-center justify-center pt-28 pb-20">
         <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
             <svg class="absolute top-1/4 left-0 w-full" height="2" viewBox="0 0 100 2" preserveAspectRatio="none">
@@ -101,7 +140,6 @@
         </div>
 
         <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-            <!-- Profile Image (Original Color) -->
             <div class="flex justify-center mb-10">
                 <div class="profile-id-frame container-box">
                     <img src="ฉัตร์ฐริกา พูลทรัพย์.jpg" 
@@ -131,7 +169,6 @@
         </div>
     </section>
 
-    <!-- 2. About Station -->
     <section id="about" class="py-20 bg-grid-light relative border-b-2 border-slate-200">
         <div class="max-w-4xl mx-auto px-4">
             <div class="flex items-center gap-4 mb-8">
@@ -149,7 +186,6 @@
         </div>
     </section>
 
-    <!-- 3. Skills Dashboard -->
     <section id="skills" class="py-20 bg-white border-b-2 border-slate-200">
         <div class="max-w-5xl mx-auto px-4">
             <div class="flex items-center gap-4 mb-12">
@@ -209,7 +245,6 @@
         </div>
     </section>
 
-    <!-- 4. Project Terminal -->
     <section id="projects" class="py-20 bg-grid-light border-b-2 border-slate-200">
         <div class="max-w-5xl mx-auto px-4">
             <div class="flex items-center gap-4 mb-12">
@@ -219,7 +254,6 @@
             </div>
 
             <div class="relative border-l-2 border-dashed border-navy ml-4 md:ml-6 space-y-12 pb-8">
-                <!-- Project 1 -->
                 <div class="relative pl-8 md:pl-12">
                     <div class="absolute -left-[11px] top-0 w-5 h-5 bg-safety border-4 border-navy rounded-full"></div>
                     <div class="bg-white border-2 border-navy container-box">
@@ -245,7 +279,6 @@
                     </div>
                 </div>
 
-                <!-- Project 2 -->
                 <div class="relative pl-8 md:pl-12">
                     <div class="absolute -left-[11px] top-0 w-5 h-5 bg-white border-4 border-navy rounded-full"></div>
                     <div class="bg-white border-2 border-navy container-box">
@@ -274,7 +307,6 @@
         </div>
     </section>
 
-    <!-- 5. Dispatch Center (Contact) -->
     <section id="contact" class="py-20 bg-navy text-white relative">
         <div class="max-w-4xl mx-auto px-4">
             <div class="flex items-center gap-4 mb-12">
