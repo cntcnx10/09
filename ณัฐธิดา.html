@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magic Logistics Portfolio | Natthida</title>
-    <!-- ใช้ฟอนต์ Cinzel สำหรับความคลาสสิกเวทมนตร์ และ Prompt สำหรับภาษาไทย -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -279,13 +278,57 @@
             .container { margin-top: 10px; }
             .profile-frame { width: 140px; height: 140px; }
         }
+        
+        /* PLANET BACK BUTTON */
+        .planet-back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(15, 16, 22, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 8px 20px 8px 12px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #D4AF37;
+            font-weight: 600;
+            font-size: 14px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .planet-back-btn:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: #D4AF37;
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+            color: white;
+        }
+
+        .planet-icon {
+            font-size: 28px;
+            filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.8));
+            animation: float-planet 4s ease-in-out infinite;
+        }
+
+        @keyframes float-planet {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(-10deg); }
+        }
     </style>
 </head>
 <body>
 
+    <a href="index.html" class="planet-back-btn">
+        <span class="planet-icon">🪐</span> กลับหน้าหลัก
+    </a>
+
     <header>
         <div class="profile-frame">
-            <!-- แก้ไขรูปโปรไฟล์ตรงนี้ -->
             <img src="ณัฐธิดา อภิวงค์งาม.png" alt="Natthida Profile" class="profile-img">
         </div>
         <h1>NATTHIDA APIWONGNGAM</h1>
