@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Promporn Sawangsri | Luxury Identity</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#050505;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+.bg{
+    position:fixed;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:-2;
+}
+
+.bg span{
+    position:absolute;
+    width:2px;
+    height:120px;
+    background:linear-gradient(transparent,#ff00cc,transparent);
+    animation:rain 8s linear infinite;
+    opacity:0.5;
+}
+
+@keyframes rain{
+
+    from{
+        transform:translateY(-100vh);
+    }
+
+    to{
+        transform:translateY(100vh);
+    }
+
+}
+
+/* MAIN */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:40px 0;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.card{
+
+    width:100%;
+    max-width:1000px;
+
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    border-radius:40px;
+
+    padding:60px;
+
+    box-shadow:
+    0 0 40px rgba(255,0,255,0.2);
+
+    animation:fade 1.5s ease;
+
+}
+
+@keyframes fade{
+
+    from{
+        opacity:0;
+        transform:translateY(80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* PROFILE */
+
+.profile{
+
+    width:230px;
+    height:230px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid #ff00cc;
+
+    box-shadow:
+    0 0 30px #ff00cc,
+    0 0 80px rgba(255,0,255,0.3);
+
+    transition:0.5s;
+
+}
+
+.profile:hover{
+    transform:scale(1.05);
+}
+
+/* TEXT */
+
+h1{
+
+    margin-top:35px;
+
+    font-size:70px;
+
+    letter-spacing:4px;
+
+    background:linear-gradient(90deg,#ff00cc,#7d5fff);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+}
+
+.student{
+
+    margin-top:10px;
+
+    color:#bbb;
+
+    font-size:22px;
+
+    letter-spacing:3px;
+
+}
+
+.quote{
+
+    margin-top:25px;
+
+    line-height:2;
+
+    color:#ddd;
+
+    font-size:19px;
+
+}
+
+/* SECTION */
+
+.section{
+    margin-top:90px;
+}
+
+.section-title{
+
+    font-size:38px;
+
+    margin-bottom:25px;
+
+    color:#ff66da;
+
+    letter-spacing:3px;
+
+}
+
+.box{
+
+    background:rgba(255,255,255,0.05);
+
+    padding:40px;
+
+    border-radius:30px;
+
+    line-height:2;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+}
+
+/* GRID */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+}
+
+/* SMALL BOX */
+
+.small-box{
+
+    background:rgba(255,255,255,0.05);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    transition:0.4s;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+}
+
+.small-box:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 0 30px rgba(255,0,255,0.15);
+
+}
+
+.small-box h3{
+
+    color:#ff66da;
+
+    margin-bottom:20px;
+
+    font-size:24px;
+
+}
+
+/* GALLERY */
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+
+}
+
+.gallery img{
+
+    width:100%;
+
+    height:300px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    transition:0.5s;
+
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* MUSIC BUTTON */
+
+.music{
+
+    position:fixed;
+
+    top:20px;
+    right:20px;
+
+    background:linear-gradient(45deg,#ff00cc,#7d5fff);
+
+    border:none;
+
+    padding:15px 22px;
+
+    border-radius:50px;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    z-index:999;
+
+}
+
+/* FOOTER */
+
+.footer{
+
+    text-align:center;
+
+    padding:80px 0;
+
+    color:#666;
+
+    letter-spacing:3px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- MUSIC -->
+
+<audio autoplay loop id="music">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music" onclick="toggleMusic()">
+🎵 PLAY / PAUSE
+</button>
+
+<!-- BACKGROUND -->
+
+<div class="bg">
+
+<span style="left:10%; animation-duration:5s;"></span>
+<span style="left:20%; animation-duration:8s;"></span>
+<span style="left:30%; animation-duration:6s;"></span>
+<span style="left:40%; animation-duration:9s;"></span>
+<span style="left:50%; animation-duration:7s;"></span>
+<span style="left:60%; animation-duration:5s;"></span>
+<span style="left:70%; animation-duration:10s;"></span>
+<span style="left:80%; animation-duration:6s;"></span>
+<span style="left:90%; animation-duration:8s;"></span>
+
+</div>
+
+<div class="container">
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="card">
+
+<!-- ใช้ไฟล์รูปชื่อ พรหมพร สว่างศรี.jpg -->
+
+<img src="พรหมพร สว่างศรี.jpg"
+class="profile">
+
+<h1>พรหมพร สว่างศรี</h1>
+
+<div class="student">
+6650101320
+</div>
+
+<div class="quote">
+
+“Luxury is not about showing money.
+It’s about standards, silence, and power.”
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section">
+
+<h2 class="section-title">
+ABOUT ME
+</h2>
+
+<div class="box">
+
+นักศึกษาจบใหม่สาย Business & Luxury Lifestyle  
+จากมหาวิทยาลัยระดับชั้นนำของประเทศ  
+(ชื่อมหาวิทยาลัยยังคงเป็นความลับ)
+
+มีความสนใจด้านธุรกิจ การลงทุน การสร้างแบรนด์
+และการพัฒนาภาพลักษณ์ระดับพรีเมียม
+
+ชอบความเรียบหรู ความสงบ และการใช้ชีวิตอย่างมีระดับ
+
+</div>
+
+</section>
+
+<!-- INFO -->
+
+<section class="section">
+
+<div class="grid">
+
+<div class="small-box">
+
+<h3>ACHIEVEMENTS</h3>
+
+🏆 Top Student Business Competition 2025 <br>
+🏆 Young Entrepreneur Award <br>
+🏆 Speaker in Marketing Workshop
+
+</div>
+
+<div class="small-box">
+
+<h3>LIFESTYLE</h3>
+
+✦ Luxury Brand <br>
+✦ Midnight Music <br>
+✦ Investment Mindset <br>
+✦ International Travel
+
+</div>
+
+<div class="small-box">
+
+<h3>FUTURE GOAL</h3>
+
+“To become a successful business owner
+and inspire people through creativity
+and leadership.”
+
+</div>
+
+<div class="small-box">
+
+<h3>SOCIAL</h3>
+
+📸 @luxury.promporn <br>
+🎵 @prombusiness <br>
+📧 secretbusiness@email.com
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="section">
+
+<h2 class="section-title">
+PRIVATE GALLERY
+</h2>
+
+<div class="gallery">
+
+<img src="พรหมพร สว่างศรี.jpg">
+
+</div>
+
+</section>
+
+<div class="footer">
+
+PROMPORN SAWANGSRI • PRIVATE LUXURY IDENTITY • 2026
+
+</div>
+
+</div>
+
+<script>
+
+/* AUTO PLAY FIX */
+
+window.addEventListener("click", () => {
+
+    const music =
+    document.getElementById("music");
+
+    music.play();
+
+},{ once:true });
+
+/* MUSIC BUTTON */
+
+const music =
+document.getElementById("music");
+
+function toggleMusic(){
+
+    if(music.paused){
+
+        music.play();
+
+    }else{
+
+        music.pause();
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
