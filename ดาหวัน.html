@@ -30,6 +30,44 @@
             padding: 40px 20px;
         }
 
+        /* PLANET BACK BUTTON */
+        .planet-back-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(26, 16, 51, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--main-purple);
+            padding: 10px 22px 10px 14px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .planet-back-btn:hover {
+            background: var(--main-purple);
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 12px 30px rgba(124, 58, 237, 0.4);
+        }
+
+        .planet-icon {
+            font-size: 24px;
+            animation: float-planet 4s ease-in-out infinite;
+        }
+
+        @keyframes float-planet {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(-10deg); }
+        }
+
         /* Profile Header */
         .profile-card {
             background: rgba(26, 16, 51, 0.6);
@@ -126,13 +164,14 @@
 </head>
 <body>
 
+<a href="index.html" class="planet-back-btn">
+    <span class="planet-icon">🪐</span> กลับหน้าหลัก
+</a>
+
 <div class="container">
-    <!-- Profile Section -->
     <div class="profile-card">
-        <!-- ใส่รูปโปรไฟล์ตรงนี้ -->
         <img src="ดาหวัน.jpg" alt="Saimai Profile Image" class="profile-image">
         
-        <!-- รูปตกแต่งแมวส้ม -->
         <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Ginger&backgroundColor=ff9d42" alt="Cute Orange Cat" class="cat-decoration">
         
         <h1>ยินดีต้อนรับสู่หน้าเว็บของ ดาหวัน โปรยกระโทก</h1>
@@ -140,7 +179,6 @@
         <p>คณะการจัดการโลจิสติกส์และการคมนาคมขนส่ง (PIM)</p>
     </div>
 
-    <!-- Intro Section -->
     <div class="intro-text">
         <h2 style="color: var(--main-purple);">"Logistics Student & Digital Artist"</h2>
         สวัสดีค่ะ ฉันเป็นนักศึกษาชั้นปีที่ 3 ที่หลงใหลในการเชื่อมโยงโลกแห่งการขนส่งเข้ากับนวัตกรรมสมัยใหม่ และรักการสร้างสรรค์งานศิลปะในเวลาว่าง
@@ -148,7 +186,6 @@
 
     <h2 style="text-align: center; color: var(--light-purple); margin-bottom: 30px;">ทักษะความสามารถ</h2>
 
-    <!-- Skill Grid Section -->
     <div class="skill-grid">
         <div class="skill-item">
             <h3>1. ทักษะการจัดการข้อมูล</h3>
