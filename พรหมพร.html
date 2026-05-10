@@ -44,15 +44,12 @@ body{
 }
 
 @keyframes rain{
-
     from{
         transform:translateY(-100vh);
     }
-
     to{
         transform:translateY(100vh);
     }
-
 }
 
 /* MAIN */
@@ -75,60 +72,41 @@ body{
 }
 
 .card{
-
     width:100%;
     max-width:1000px;
-
     background:rgba(255,255,255,0.05);
-
     backdrop-filter:blur(15px);
-
     border:1px solid rgba(255,255,255,0.1);
-
     border-radius:40px;
-
     padding:60px;
-
     box-shadow:
     0 0 40px rgba(255,0,255,0.2);
-
     animation:fade 1.5s ease;
-
 }
 
 @keyframes fade{
-
     from{
         opacity:0;
         transform:translateY(80px);
     }
-
     to{
         opacity:1;
         transform:translateY(0);
     }
-
 }
 
 /* PROFILE */
 
 .profile{
-
     width:230px;
     height:230px;
-
     border-radius:50%;
-
     object-fit:cover;
-
     border:5px solid #ff00cc;
-
     box-shadow:
     0 0 30px #ff00cc,
     0 0 80px rgba(255,0,255,0.3);
-
     transition:0.5s;
-
 }
 
 .profile:hover{
@@ -138,42 +116,26 @@ body{
 /* TEXT */
 
 h1{
-
     margin-top:35px;
-
     font-size:70px;
-
     letter-spacing:4px;
-
     background:linear-gradient(90deg,#ff00cc,#7d5fff);
-
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
-
 }
 
 .student{
-
     margin-top:10px;
-
     color:#bbb;
-
     font-size:22px;
-
     letter-spacing:3px;
-
 }
 
 .quote{
-
     margin-top:25px;
-
     line-height:2;
-
     color:#ddd;
-
     font-size:19px;
-
 }
 
 /* SECTION */
@@ -183,155 +145,144 @@ h1{
 }
 
 .section-title{
-
     font-size:38px;
-
     margin-bottom:25px;
-
     color:#ff66da;
-
     letter-spacing:3px;
-
 }
 
 .box{
-
     background:rgba(255,255,255,0.05);
-
     padding:40px;
-
     border-radius:30px;
-
     line-height:2;
-
     border:1px solid rgba(255,255,255,0.08);
-
 }
 
 /* GRID */
 
 .grid{
-
     display:grid;
-
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
     gap:25px;
-
 }
 
 /* SMALL BOX */
 
 .small-box{
-
     background:rgba(255,255,255,0.05);
-
     border-radius:25px;
-
     padding:35px;
-
     transition:0.4s;
-
     border:1px solid rgba(255,255,255,0.08);
-
 }
 
 .small-box:hover{
-
     transform:translateY(-10px);
-
     box-shadow:0 0 30px rgba(255,0,255,0.15);
-
 }
 
 .small-box h3{
-
     color:#ff66da;
-
     margin-bottom:20px;
-
     font-size:24px;
-
 }
 
 /* GALLERY */
 
 .gallery{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-    gap:20px;
-
+    display: flex;
+    justify-content: center; /* จัดให้รูปอยู่กึ่งกลาง */
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .gallery img{
-
-    width:100%;
-
-    height:300px;
-
-    object-fit:cover;
-
-    border-radius:25px;
-
-    transition:0.5s;
-
+    width: 100%;
+    max-width: 400px; /* จำกัดความกว้างไม่ให้ใหญ่ล้นจอ */
+    height: auto; /* ให้ความสูงปรับอัตโนมัติตามสัดส่วนรูปจริง หน้าจะได้ไม่โดนตัด */
+    border-radius: 25px;
+    transition: 0.5s;
+    object-fit: cover;
 }
 
 .gallery img:hover{
-    transform:scale(1.05);
+    transform: scale(1.05);
 }
-
 /* MUSIC BUTTON */
 
 .music{
-
     position:fixed;
-
     top:20px;
     right:20px;
-
     background:linear-gradient(45deg,#ff00cc,#7d5fff);
-
     border:none;
-
     padding:15px 22px;
-
     border-radius:50px;
-
     color:white;
-
     cursor:pointer;
-
     font-weight:bold;
-
     z-index:999;
-
 }
 
 /* FOOTER */
 
 .footer{
-
     text-align:center;
-
     padding:80px 0;
-
     color:#666;
-
     letter-spacing:3px;
-
+}
+/* PLANET BACK BUTTON */
+.planet-back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(15, 16, 22, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 8px 20px 8px 12px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #D4AF37;
+    font-weight: 600;
+    font-size: 14px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
+.planet-back-btn:hover {
+    background: rgba(212, 175, 55, 0.15);
+    border-color: #D4AF37;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+    color: white;
+}
+
+.planet-icon {
+    font-size: 28px;
+    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.8));
+    animation: float-planet 4s ease-in-out infinite;
+}
+
+@keyframes float-planet {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(-10deg); }
+}
+    
 </style>
 
 </head>
 
 <body>
 
-<!-- MUSIC -->
+<a href="index.html" class="planet-back-btn">
+    <span class="planet-icon">🪐</span> กลับหน้าหลัก
+</a>
 
 <audio autoplay loop id="music">
   <source src="music.mp3" type="audio/mpeg">
@@ -340,8 +291,6 @@ h1{
 <button class="music" onclick="toggleMusic()">
 🎵 PLAY / PAUSE
 </button>
-
-<!-- BACKGROUND -->
 
 <div class="bg">
 
@@ -359,13 +308,9 @@ h1{
 
 <div class="container">
 
-<!-- HERO -->
-
 <section class="hero">
 
 <div class="card">
-
-<!-- ใช้ไฟล์รูปชื่อ พรหมพร สว่างศรี.jpg -->
 
 <img src="พรหมพร สว่างศรี.jpg"
 class="profile">
@@ -387,8 +332,6 @@ It’s about standards, silence, and power.”
 
 </section>
 
-<!-- ABOUT -->
-
 <section class="section">
 
 <h2 class="section-title">
@@ -409,8 +352,6 @@ ABOUT ME
 </div>
 
 </section>
-
-<!-- INFO -->
 
 <section class="section">
 
@@ -460,8 +401,6 @@ and leadership.”
 </div>
 
 </section>
-
-<!-- GALLERY -->
 
 <section class="section">
 
