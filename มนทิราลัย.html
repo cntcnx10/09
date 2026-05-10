@@ -37,6 +37,45 @@
             padding: 0 20px;
         }
 
+        /* PLANET BACK BUTTON */
+        .planet-back-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--primary-pink);
+            padding: 10px 22px 10px 14px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--dark-pink);
+            font-weight: 600;
+            font-size: 14px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 133, 162, 0.2);
+        }
+
+        .planet-back-btn:hover {
+            background: var(--primary-pink);
+            color: white;
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 12px 30px rgba(255, 133, 162, 0.4);
+        }
+
+        .planet-icon {
+            font-size: 24px;
+            animation: float-planet 4s ease-in-out infinite;
+        }
+
+        @keyframes float-planet {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(-10deg); }
+        }
+
         /* --- Header Section --- */
         header {
             background: linear-gradient(135deg, var(--primary-pink), var(--dark-pink));
@@ -48,15 +87,14 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        /* --- New styles for Profile Image --- */
         .profile-pic {
-            width: 180px; /* กำหนดขนาดความกว้าง */
-            height: 180px; /* กำหนดขนาดความสูง */
-            border-radius: 50%; /* ทำให้ออกมาเป็นวงกลม */
-            border: 5px solid rgba(255, 255, 255, 0.8); /* เพิ่มขอบสีขาวจางๆ */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* เพิ่มเงาให้รูปภาพ */
-            object-fit: cover; /* จัดการภาพให้พอดีกับกรอบวงกลม */
-            margin-bottom: 25px; /* เว้นระยะห่างด้านล่าง */
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            object-fit: cover;
+            margin-bottom: 25px;
         }
 
         header h1 {
@@ -196,12 +234,13 @@
 </head>
 <body>
 
+    <a href="index.html" class="planet-back-btn">
+        <span class="planet-icon">🪐</span> กลับหน้าหลัก
+    </a>
+
     <header>
         <div class="container">
-            <!-- ส่วนเพิ่มรูปภาพ (Profile Image Section) -->
-            <!-- อย่าลืมตรวจสอบไฟล์ชื่อ 'มนทิราลัย สมเดช.jpg' ให้ตรงกับในโค้ดนี้นะครับ -->
             <img src="มนทิราลัย สมเดช.jpg" alt="คุณกิ๊ฟ มนทิราลัย สมเดช" class="profile-pic">
-            
             <h1>นางสาวมนทิราลัย สมเดช (กิ๊ฟ)</h1>
             <p class="student-id">รหัสนักศึกษา: 6650100340</p>
             <p class="slogan">"มุ่งมั่นพัฒนาโลจิสติกส์ ด้วยเทคโนโลยีและแนวคิดสร้างสรรค์"</p>
@@ -270,5 +309,4 @@
     </footer>
 
 </body>
-</html>
 </html>
