@@ -35,6 +35,44 @@
             position: relative;
         }
 
+        /* PLANET BACK BUTTON (Bottom Left) */
+        .planet-back-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(16, 124, 65, 0.8); /* สีเขียวมรกต */
+            backdrop-filter: blur(10px);
+            border: 1px solid #86efac;
+            padding: 10px 22px 10px 14px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .planet-back-btn:hover {
+            background: #107c41;
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 12px 30px rgba(16, 124, 65, 0.5);
+        }
+
+        .planet-icon {
+            font-size: 24px;
+            animation: float-planet 4s ease-in-out infinite;
+        }
+
+        @keyframes float-planet {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(-10deg); }
+        }
+
         /* ลูกเล่นใบไม้ลอย (Background Decor) */
         .leaf-decor {
             position: absolute;
@@ -220,34 +258,33 @@
 </head>
 <body>
 
-    <!-- Background Decoration -->
+    <a href="index.html" class="planet-back-btn">
+        <span class="planet-icon">🪐</span> กลับหน้าหลัก
+    </a>
+
     <svg class="leaf-decor" viewBox="0 0 100 100">
         <path class="bg-leaf" style="top: 10%; left: 5%; width: 50px; animation-delay: 0s;" d="M10,50 Q25,25 50,50 Q75,75 90,50 Q75,25 50,50 Q25,75 10,50" />
         <path class="bg-leaf" style="bottom: 15%; right: 10%; width: 70px; animation-delay: 2s;" d="M10,50 Q25,25 50,50 Q75,75 90,50 Q75,25 50,50 Q25,75 10,50" />
     </svg>
 
     <div class="card">
-        <!-- Profile Image -->
         <img src="วรรณิษา เจ็กสูงเนิน.jpg" alt="Wannisa J. Portrait" class="profile-img">
         
         <h1>วรรณิษา เจ็กสูงเนิน</h1>
         <div class="id-badge">ID: 6650100218</div>
 
-        <!-- Unique Abilities -->
         <div class="section-title">Unique Abilities</div>
         <div class="grid">
             <div class="ability-box">🌿 หายตัว</div>
             <div class="ability-box">👁️ อ่านใจ</div>
         </div>
 
-        <!-- Resources -->
         <div class="section-title">Resources</div>
         <div class="grid">
             <div class="ability-box">🍃 เสกเงิน</div>
             <div class="ability-box">💎 อมตะ</div>
         </div>
 
-        <!-- Contact Info -->
         <div class="contact-info">
             <div class="contact-item">
                 <span class="contact-label">Email:</span>
@@ -263,7 +300,6 @@
             </div>
         </div>
 
-        <!-- Action Buttons -->
         <div class="btn-container">
             <button class="btn btn-log">Mission Log</button>
             <button class="btn btn-connect">Connect Directly</button>
