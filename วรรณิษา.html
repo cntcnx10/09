@@ -3,36 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agent Profile - Wannisa Nature</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Prompt:wght@300;500&display=swap" rel="stylesheet">
+    <title>Executive Profile - Dumbo Jupiter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-glow: rgba(16, 124, 65, 0.6); /* Emerald Green */
-            --secondary-glow: rgba(186, 255, 41, 0.3); /* Lime/Gold Glow */
-            --glass-bg: rgba(0, 20, 10, 0.4);
-            --glass-border: rgba(255, 255, 255, 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            --jupiter-gold: #f39c12;
+            --jupiter-orange: #d35400;
+            --deep-space: #05050a;
+            --text-silver: #e2e8f0;
         }
 
         body {
-            /* พื้นหลังโทนเขียวเข้มลึกลับ */
-            background: radial-gradient(circle at center, #0a1a0f 0%, #050a05 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-color: var(--deep-space);
+            background-image: radial-gradient(circle at center, #1a1a2e 0%, #05050a 100%);
+            color: var(--text-silver);
             font-family: 'Prompt', sans-serif;
-            color: #ffffff;
-            overflow: hidden;
-            padding: 20px;
-            position: relative;
+            margin: 0; padding: 20px;
+            display: flex; justify-content: center;
         }
 
         /* PLANET BACK BUTTON (Bottom Left) */
@@ -43,24 +30,25 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            background: rgba(16, 124, 65, 0.8); /* สีเขียวมรกต */
+            background: rgba(26, 26, 46, 0.8);
             backdrop-filter: blur(10px);
-            border: 1px solid #86efac;
+            border: 1px solid var(--jupiter-gold);
             padding: 10px 22px 10px 14px;
             border-radius: 50px;
             text-decoration: none;
-            color: white;
+            color: var(--jupiter-gold);
             font-weight: 600;
             font-size: 14px;
             z-index: 1000;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
         }
 
         .planet-back-btn:hover {
-            background: #107c41;
+            background: var(--jupiter-gold);
+            color: var(--deep-space);
             transform: scale(1.05) translateY(-5px);
-            box-shadow: 0 12px 30px rgba(16, 124, 65, 0.5);
+            box-shadow: 0 12px 30px rgba(243, 156, 18, 0.4);
         }
 
         .planet-icon {
@@ -73,186 +61,70 @@
             50% { transform: translateY(-5px) rotate(-10deg); }
         }
 
-        /* ลูกเล่นใบไม้ลอย (Background Decor) */
-        .leaf-decor {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.4;
-        }
-
-        /* Ambient Forest Light */
-        body::before {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: var(--primary-glow);
-            filter: blur(120px);
-            top: 10%;
-            right: 10%;
-            z-index: -1;
-        }
-
-        /* Glassmorphism Card */
-        .card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
+        .container {
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(243, 156, 18, 0.2);
+            border-radius: 30px;
             padding: 40px;
-            width: 100%;
-            max-width: 450px;
-            text-align: center;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(0, 255, 100, 0.05);
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+            margin-bottom: 40px;
+        }
+
+        .header { text-align: center; margin-bottom: 40px; }
+        
+        .profile-wrap {
             position: relative;
-            z-index: 10;
-        }
-
-        /* Profile Image */
-        .profile-img {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
+            width: 180px; height: 180px;
             margin: 0 auto 20px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            padding: 5px;
-            background: linear-gradient(45deg, #107c41, #86efac);
+        }
+
+        .profile-img {
+            width: 100%; height: 100%;
+            border-radius: 50%;
+            border: 4px solid var(--jupiter-gold);
             object-fit: cover;
-            box-shadow: 0 0 25px var(--primary-glow);
+            box-shadow: 0 0 30px rgba(243, 156, 18, 0.4);
         }
 
-        h1 {
-            font-size: 1.8rem;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            background: linear-gradient(to bottom, #fff, #a7f3d0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        h1 { font-family: 'Orbitron'; color: white; margin: 10px 0; font-size: 2rem; }
+        .id-text { color: var(--jupiter-gold); letter-spacing: 5px; font-size: 0.8rem; }
 
-        .id-badge {
-            font-size: 0.8rem;
-            color: #86efac;
-            letter-spacing: 3px;
-            margin-bottom: 30px;
-            opacity: 0.8;
-        }
-
-        /* Abilities Section */
+        .section { margin-bottom: 30px; }
         .section-title {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: #6edb96;
-            margin-bottom: 10px;
-            text-align: left;
-            border-left: 2px solid #107c41;
-            padding-left: 10px;
+            font-family: 'Orbitron';
+            color: var(--jupiter-gold);
+            border-bottom: 1px solid var(--jupiter-gold);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            display: flex; align-items: center;
+            gap: 10px;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 25px;
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .ability-card {
+            background: rgba(255,255,255,0.05);
+            padding: 15px; border-radius: 15px;
+            border-left: 4px solid var(--jupiter-gold);
         }
 
-        .ability-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 12px;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            border: 1px solid rgba(0, 255, 100, 0.1);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        .contact-box {
+            background: var(--jupiter-orange);
+            color: white; padding: 20px;
+            border-radius: 20px; text-align: center;
+            margin-top: 40px;
         }
 
-        .ability-box:hover {
-            background: rgba(16, 124, 65, 0.3);
-            border-color: #86efac;
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(16, 124, 65, 0.4);
+        .slogan {
+            font-style: italic; text-align: center;
+            font-size: 1.2rem; color: var(--jupiter-gold);
+            margin-top: 30px;
         }
 
-        /* Contact Info */
-        .contact-info {
-            text-align: left;
-            font-size: 0.85rem;
-            margin-bottom: 30px;
-            color: #cbd5e1;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 15px;
-            border-radius: 15px;
-        }
-
-        .contact-item {
-            margin-bottom: 6px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .contact-label {
-            color: #86efac;
-            font-weight: 500;
-        }
-
-        /* Buttons */
-        .btn-container {
-            display: flex;
-            gap: 15px;
-        }
-
-        .btn {
-            flex: 1;
-            padding: 14px;
-            border-radius: 12px;
-            border: none;
-            cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 0.75rem;
-            transition: 0.4s;
-            text-transform: uppercase;
-        }
-
-        .btn-log {
-            background: transparent;
-            border: 1px solid var(--glass-border);
-            color: #fff;
-        }
-
-        .btn-log:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: #86efac;
-        }
-
-        .btn-connect {
-            background: linear-gradient(45deg, #064e3b, #10b981);
-            color: white;
-            box-shadow: 0 4px 15px rgba(6, 78, 59, 0.5);
-        }
-
-        .btn-connect:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.6);
-        }
-
-        /* Leaf Animation */
-        @keyframes float {
-            0% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
-            50% { transform: translateY(-20px) rotate(10deg); opacity: 0.5; }
-            100% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
-        }
-
-        .bg-leaf {
-            position: absolute;
-            fill: #107c41;
-            animation: float 6s infinite ease-in-out;
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
+            .planet-back-btn { bottom: 20px; left: 20px; }
         }
     </style>
 </head>
@@ -262,47 +134,46 @@
         <span class="planet-icon">🪐</span> กลับหน้าหลัก
     </a>
 
-    <svg class="leaf-decor" viewBox="0 0 100 100">
-        <path class="bg-leaf" style="top: 10%; left: 5%; width: 50px; animation-delay: 0s;" d="M10,50 Q25,25 50,50 Q75,75 90,50 Q75,25 50,50 Q25,75 10,50" />
-        <path class="bg-leaf" style="bottom: 15%; right: 10%; width: 70px; animation-delay: 2s;" d="M10,50 Q25,25 50,50 Q75,75 90,50 Q75,25 50,50 Q25,75 10,50" />
-    </svg>
-
-    <div class="card">
-        <img src="วรรณิษา เจ็กสูงเนิน.jpg" alt="Wannisa J. Portrait" class="profile-img">
-        
-        <h1>วรรณิษา เจ็กสูงเนิน</h1>
-        <div class="id-badge">ID: 6650100218</div>
-
-        <div class="section-title">Unique Abilities</div>
-        <div class="grid">
-            <div class="ability-box">🌿 หายตัว</div>
-            <div class="ability-box">👁️ อ่านใจ</div>
+    <div class="container">
+        <div class="header">
+            <div class="profile-wrap">
+                <img src="วรรณิษา เจ็กสูงเนิน.jpg" class="profile-img" alt="Executive Portrait">
+            </div>
+            <h1>วรรณิษา เจ็กสูงเนิน</h1>
+            <div class="id-text">ID: 6650100218</div>
+            <p style="color: var(--jupiter-gold); font-weight: 600;">JUPITER SECTOR EXECUTIVE • AGE 200</p>
         </div>
 
-        <div class="section-title">Resources</div>
-        <div class="grid">
-            <div class="ability-box">🍃 เสกเงิน</div>
-            <div class="ability-box">💎 อมตะ</div>
+        <div class="section">
+            <div class="section-title"><span>🪐</span> ABOUT ME</div>
+            <p>จบการศึกษาจาก <strong>สถาบันการจัดการกาแลคซี่</strong> ปัจจุบันเป็นผู้บริหารประจำดาวพฤหัสบดี ผู้เชี่ยวชาญการจัดการระบบจักรวาลด้วยพลังจิตและวิสัยทัศน์ที่ยาวนานกว่า 2 ศตวรรษ</p>
         </div>
 
-        <div class="contact-info">
-            <div class="contact-item">
-                <span class="contact-label">Email:</span>
-                <span>wannisa.j@mystic.io</span>
-            </div>
-            <div class="contact-item">
-                <span class="contact-label">Secure Line:</span>
-                <span>+66 9X-XXX-XXXX</span>
-            </div>
-            <div class="contact-item">
-                <span class="contact-label">Social:</span>
-                <span>@wannisa.vault</span>
+        <div class="section">
+            <div class="section-title"><span>⚡</span> CELESTIAL ABILITIES</div>
+            <div class="grid">
+                <div class="ability-card"><strong>Levitation:</strong> บินข้ามดวงดาวได้อย่างอิสระ</div>
+                <div class="ability-card"><strong>Invisibility:</strong> หายตัวเพื่อภารกิจลับ</div>
+                <div class="ability-card"><strong>Materialization:</strong> เสกทุกสิ่งที่ต้องการได้ทันที</div>
+                <div class="ability-card"><strong>Telepathy:</strong> อ่านใจคู่ค้าได้ทุกเผ่าพันธุ์</div>
             </div>
         </div>
 
-        <div class="btn-container">
-            <button class="btn btn-log">Mission Log</button>
-            <button class="btn btn-connect">Connect Directly</button>
+        <div class="section">
+            <div class="section-title"><span>🚀</span> MISSION LOGS</div>
+            <ul style="line-height: 2;">
+                <li>จัดตั้งศูนย์กลางโลจิสติกส์บนจุดแดงยักษ์ (Great Red Spot)</li>
+                <li>เจรจาสันติภาพกับเผ่าพันธุ์ก๊าซในชั้นบรรยากาศชั้นลึก</li>
+                <li>วางระบบเสกทรัพยากรเพื่อช่วยเหลือดาวเคราะห์ที่ขาดแคลน</li>
+            </ul>
+        </div>
+
+        <div class="slogan">
+            “ไม่มีจักรวาลไหนไกลเกินกว่าความฝัน และไม่มีดาวดวงใดที่ฉันไปไม่ถึง”
+        </div>
+
+        <div class="contact-box">
+            GALACTIC CONTACT: prakaithip@starfleet.galaxy (DUMBO UNIT)
         </div>
     </div>
 
